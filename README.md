@@ -12,16 +12,22 @@ Features:
 * Includes timestamp (timezone aware)
 * Imported text looks as expected (no formatting/encoding issues)
 
-Usage instructions:
+Prerequisites:
 
-1. Clone & restore dependencies in this repository.
+1. Clone the repository and execute `pip3 install -r requirements.txt`.
 1. Make sure the `dayone2` executable is on your PATH (select DayOne > Install Command Line Tools...).
-1. Export your Journey entries to a .zip file.
-1. Extract the .zip file into a directory.
-1. From a Terminal window, execute the following from the root of the repository:
+1. Export your journal from Journey as a .zip.
+1. Extract the resulting .zip file into a directory.
+   
+With these instructions complete, you should have a `source_directory` with all of your exported Journey entries. Given this and a `target_journal_name`, run the following from a Terminal window:
 
 ```shell
-$ python3 j2d.py <name-of-target-journal> <path-to-unzipped-export-directory>
+$ python3 j2d.py <target_journal_name> <source_directory>
+```
+
+Example output:
+
+```shell
 WARNING: coordinates are invalid: 1.7976931348623157e+308 1.7976931348623157e+308
 [1/508] Added new: 1532920577071-bxzfmf02n8r96vb5 -> 151FDBF1CB1B4F658C261131AD7296D4: 66 words, 8 tags, 6 photos
 [2/508] Added new: 1590644431033-3b8kodxeyhfwatze -> 5766077480B3478AA5744906752B7E9A: 9 words
@@ -36,4 +42,3 @@ WARNING: coordinates are invalid: 1.7976931348623157e+308 1.7976931348623157e+30
 
 508 succeeded, 0 failed, 1 skipped
 ```
-
