@@ -4,6 +4,13 @@
 
 A command-line tool to migrate your Journey entries to Day One.
 
+Features:
+
+* Includes photos
+* Includes geocoordinates
+* Includes timestamp (timezone aware)
+* Includes tags
+
 Usage instructions:
 
 1. Export your DayOne journal entries to a .zip file.
