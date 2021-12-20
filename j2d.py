@@ -12,6 +12,7 @@ from typing import List, Iterable, Optional, Tuple
 from bs4 import BeautifulSoup
 from pytz import timezone as tz, UnknownTimeZoneError
 from tzlocal import get_localzone
+from markdownify import markdownify
 
 
 @dataclass
@@ -160,7 +161,7 @@ class Importer:
                 print('WARNING: coordinates are invalid: {} {}'.format(raw.lat, raw.lon))
 
         skip = False
-        text = self.strip_text_from_html_body(raw.text)
+        text = self.convert_html_to_markdown(raw.text)
         if not text:
             print('WARNING: entry has no text: id={}'.format(raw.id))
         if not text and len(photos) == 0:
@@ -181,11 +182,11 @@ class Importer:
         tag = re.sub(r'\s+', r'\\\g<0>', raw)
         return tag
 
-    def strip_text_from_html_body(self, original_text):
+    def convert_html_to_markdown(self, original_text):
         soup = BeautifulSoup(original_text, 'html5lib')
         is_html = bool(soup.find())  # true if at least one HTML element can be found
         if is_html:
-            return soup.get_text(strip=True)
+            return markdownify(original_text)
         else:
             return original_text
 
