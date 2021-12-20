@@ -1,3 +1,4 @@
 beautifulsoup4~=4.9.3
 pytz~=2020.5
 tzlocal~=2.1
+html5lib~=1.1
