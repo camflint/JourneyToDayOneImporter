@@ -10,9 +10,9 @@ from pathlib import Path
 from typing import List, Iterable, Optional, Tuple
 
 from bs4 import BeautifulSoup
+from markdownify import markdownify
 from pytz import timezone as tz, UnknownTimeZoneError
 from tzlocal import get_localzone
-from markdownify import markdownify
 
 
 @dataclass
