@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "j2d"
+version = "0.1.0"
+description = "Migrate your Journey entries to Day One."
+authors = ["Cameron Flint, Sergey Komar"]
+license = "MIT"
+packages = [
+    { include = "j2d", from = "src/" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+beautifulsoup4 = "^4.9"
+pytz = "^2020.5"
+tzlocal = "^2.1"
+html5lib = "^1.1"
+markdownify = "^0.10.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
