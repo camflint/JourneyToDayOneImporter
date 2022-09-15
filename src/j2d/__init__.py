@@ -5,14 +5,14 @@ from logging import FileHandler
 
 
 STDOUT_LEVEL = logging.INFO
-STDOUT_FORMAT_STRING = '%(levelname)s :: %(message)s'
+STDOUT_FORMAT_STRING = "%(levelname)s :: %(message)s"
 FILE_LEVEL = logging.DEBUG
-FILE_FORMAT_STRING = '%(asctime)s %(levelname)s %(module)s %(funcName)s :: %(message)s'
+FILE_FORMAT_STRING = "%(asctime)s %(levelname)s %(module)s %(funcName)s :: %(message)s"
 
 
 # Logging to file
 
-fh = FileHandler("{}.log".format(datetime.now().strftime(format="%Y%m%d-%H%M")))
+fh = FileHandler("j2d-{}.log".format(datetime.now().strftime(format="%Y%m%d-%H%M")))
 fh.setLevel(FILE_LEVEL)
 fh.setFormatter(logging.Formatter(FILE_FORMAT_STRING))
 
